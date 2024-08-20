@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Fixed Background Image */
+body {
+    background-image: url('screenshot.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Fixed Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    width: 40px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 2px;
+    width: 0%;
+    background: #6b7a78;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s ease;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+/* Banner Section Styling */
+.banner {
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.content {
+    color: #fff;
+}
+
+.content h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+button {
+    width: 180px;
+    padding: 12px 0;
+    text-align: center;
+    margin: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #6b7a78;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+button span {
+    background: #6b7a78;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s ease;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+button:hover {
+    border: none;
+}
+
+/* Section Styling */
+.section {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px 0;
+    color: #333;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.section p {
+    font-size: 1.1em;
+}
+
+/* Gallery Styling */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between items */
+    justify-content: center; /* Center align items horizontally */
+    margin-top: 20px;
+}
+
+/* Photo Styling */
+.photo {
+    position: relative;
+    flex: 1 1 calc(33.333% - 20px); /* Adjust width to fit three items per row, minus gap */
+    max-width: calc(33.333% - 20px); /* Limit maximum width */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-bottom: 20px; /* Space below each photo */
+    background-color: #fff; /* Background color to improve readability */
+    aspect-ratio: 1; /* Maintain square aspect ratio */
+}
+
+/* Ensure images fill the container */
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container without distortion */
+    display: block; /* Remove extra space below images */
+}
+
+/* Comment Styling */
+.comment {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: #fff; /* Text color */
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .photo {
+        flex: 1 1 calc(50% - 20px); /* Two items per row on smaller screens */
+        max-width: calc(50% - 20px); /* Limit maximum width */
+    }
+}
+
+@media (max-width: 480px) {
+    .photo {
+        flex: 1 1 100%; /* One item per row on very small screens */
+        max-width: 100%; /* Limit maximum width */
+    }
+}
+
+/* Biography Section Styling */
+.biography-section {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px 0;
+    color: #333;
+    text-align: center;
+}
+
+.biography-section img {
+    max-width: 150px; /* Set a maximum width for the image */
+    width: auto; /* Allow width to be auto-adjusted */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 50%; /* Optional: Make the image circular */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    display: block; /* Ensure no extra space below the image */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Contact Section Styling */
+.contact-section {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px 0;
+    text-align: center;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-section label {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.contact-section input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-section button {
+    width: 200px;
+    padding: 12px 0;
+    text-align: center;
+    margin: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #6b7a78;
+    background: transparent;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section button:hover {
+    background-color: #6b7a78;
+    color: #fff;
+    border: none;
+}
